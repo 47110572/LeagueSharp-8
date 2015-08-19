@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EverestUtils", "EverestUtils\EverestUtils.csproj", "{53E5F498-B52D-446C-A3AD-8276C5001535}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EverestLib", "EverestLib\EverestUtils.csproj", "{53E5F498-B52D-446C-A3AD-8276C5001535}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StatsSharp", "GameStats\StatsSharp.csproj", "{24A6AB60-DF12-444A-BCDF-BAB07CBD23E2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StatsSharp", "StatsSharp\StatsSharp.csproj", "{24A6AB60-DF12-444A-BCDF-BAB07CBD23E2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

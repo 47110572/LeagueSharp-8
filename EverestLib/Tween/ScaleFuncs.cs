@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace EverestUtils.Tween
+namespace EverestLib.Tween
 {
     /// <summary>
     ///     A "library" of commonly used scale functions

@@ -2,14 +2,17 @@
 using System.Collections.Generic;
 using System.IO;
 using LeagueSharp;
+using LeagueSharp.Common;
 using LeagueSharp.SDK.Core;
-using LeagueSharp.SDK.Core.Enumerations;
 using LeagueSharp.SDK.Core.Events;
 using LeagueSharp.SDK.Core.Extensions.SharpDX;
 using LeagueSharp.SDK.Core.UI.IMenu;
 using LeagueSharp.SDK.Core.Utils;
 using SharpDX;
 using SharpDX.Direct3D9;
+using WindowsMessages = LeagueSharp.SDK.Core.Enumerations.WindowsMessages;
+using Menu = LeagueSharp.Common.Menu;
+using MenuItem = LeagueSharp.Common.MenuItem;
 
 namespace StatsSharp
 {
@@ -21,6 +24,7 @@ namespace StatsSharp
 
         private static readonly string SaveFile = Path.Combine(SavePath, "StatsSharp.dat");
         private static readonly string SaveLog = Path.Combine(SavePath, "StatsSharpClicksLog.txt");
+        private static readonly Menu _menu = new Menu("StatsSharp", "stats_sharp", true);
         private static Dictionary<string, uint> _stats;
         private static Font _font;
         private static Line _line;
@@ -51,6 +55,9 @@ namespace StatsSharp
             {
                 GLLines = true
             };
+
+            _menu.AddItem(new MenuItem("always_show", "Always Show Stats").SetValue(false));
+            _menu.AddToMainMenu();
 
             Load.OnLoad += (loadSender, loadArgs) =>
             {
@@ -90,14 +97,8 @@ namespace StatsSharp
 
         private static void OnEndScene(EventArgs drawArgs)
         {
-            // Only when the menu is open.
-            if (!MenuManager.Instance.MenuVisible)
+            if (!MenuManager.Instance.MenuVisible && !_menu.Item("always_show").GetValue<bool>())
                 return;
-
-            if (_dragging)
-            {
-                
-            }
 
             var keyText = "";
             var valueText = "";
@@ -203,7 +204,7 @@ namespace StatsSharp
             }
 
             File.WriteAllText(SaveLog,
-                "[" + DateTime.Now.ToShortDateString() + "] Clicks: " + _movements + "\r\n" + (File.Exists(SaveLog)
+                "[" + DateTime.Now.ToString("yyyy/MM/dd hh:mm:ss.fff") + "] Clicks: " + _movements + "\r\n" + (File.Exists(SaveLog)
                     ? File.ReadAllText(SaveLog)
                     : ""));
         }

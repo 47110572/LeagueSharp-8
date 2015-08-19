@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using LeagueSharp;
 
-namespace EverestUtils.Tween
+namespace EverestLib.Tween
 {
     /// <summary>
     ///     Tween Utility, smoothly interpolates between two values over time
