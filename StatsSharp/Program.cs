@@ -31,7 +31,6 @@ namespace StatsSharp
         // ReSharper disable once UnusedParameter.Local
         private static void Main(string[] mainArgs)
         {
-
             // Register the font
             _font = new Font(Drawing.Direct3DDevice, new FontDescription
             {
@@ -228,7 +227,9 @@ namespace StatsSharp
             using (var file = File.Open(SaveFile, FileMode.Open, FileAccess.Read))
             using (var reader = new BinaryReader(file))
             {
-                if (file.Length == 162)
+                Console.Write(file.Length);
+
+                if (file.Length == 161)
                     _gameId = reader.ReadInt64();
 
                 var drawX = reader.ReadInt32();
