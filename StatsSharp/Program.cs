@@ -18,7 +18,6 @@ namespace StatsSharp
         private static readonly string SaveLog = Path.Combine(SavePath, "StatsSharpClicksLog.txt");
         private static readonly Menu Menu = new Menu("StatsSharp", "stats_sharp", true);
         private static Dictionary<string, uint> _stats;
-        private static long _gameId;
         private static Font _font;
         private static Line _line;
         private static int _drawX = Drawing.Width - 30;
@@ -184,7 +183,7 @@ namespace StatsSharp
             using (var file = File.Open(SaveFile, FileMode.Truncate, FileAccess.Write))
             using (var writer = new BinaryWriter(file))
             {
-                writer.Write(_gameId);
+                writer.Write(Game.Id);
                 writer.Write(_drawX);
                 writer.Write(_drawY);
                 writer.Write(_stats.Count);
@@ -227,11 +226,7 @@ namespace StatsSharp
             using (var file = File.Open(SaveFile, FileMode.Open, FileAccess.Read))
             using (var reader = new BinaryReader(file))
             {
-                Console.Write(file.Length);
-
-                if (file.Length == 161)
-                    _gameId = reader.ReadInt64();
-
+                var gameId = reader.ReadInt64();
                 var drawX = reader.ReadInt32();
                 var drawY = reader.ReadInt32();
 
@@ -250,14 +245,12 @@ namespace StatsSharp
                     _stats[key] = value;
                 }
 
-                if (Game.Id == _gameId)
+                if (Game.Id == gameId)
                 {
                     _stats["Clicks Last Game"] = _stats["Clicks This Game"];
                     _stats["Clicks This Game"] = 0;
                     SaveData(true);
                 }
-
-                _gameId = Game.Id;
             }
         }
 
