@@ -11,6 +11,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EverestUtility", "EverestUt
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoadingScreenControl", "LoadingScreenControl\LoadingScreenControl.csproj", "{1805731F-6E7F-4404-A030-8BAAE4D25673}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testing", "Testing\Testing.csproj", "{C60EDE2A-F58A-4299-B211-FCD138A81A74}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utility", "Utility", "{77BDB3CD-DAD9-44D1-886E-270EB6249B60}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkinChanger", "SkinChanger\SkinChanger.csproj", "{D0536742-CB0D-483B-AA2A-13E65221461A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,8 +39,22 @@ Global
 		{1805731F-6E7F-4404-A030-8BAAE4D25673}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1805731F-6E7F-4404-A030-8BAAE4D25673}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1805731F-6E7F-4404-A030-8BAAE4D25673}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C60EDE2A-F58A-4299-B211-FCD138A81A74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C60EDE2A-F58A-4299-B211-FCD138A81A74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C60EDE2A-F58A-4299-B211-FCD138A81A74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C60EDE2A-F58A-4299-B211-FCD138A81A74}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0536742-CB0D-483B-AA2A-13E65221461A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0536742-CB0D-483B-AA2A-13E65221461A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0536742-CB0D-483B-AA2A-13E65221461A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0536742-CB0D-483B-AA2A-13E65221461A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{24A6AB60-DF12-444A-BCDF-BAB07CBD23E2} = {77BDB3CD-DAD9-44D1-886E-270EB6249B60}
+		{B50BFABB-8A68-4493-AF17-559A9E901FFD} = {77BDB3CD-DAD9-44D1-886E-270EB6249B60}
+		{1805731F-6E7F-4404-A030-8BAAE4D25673} = {77BDB3CD-DAD9-44D1-886E-270EB6249B60}
+		{D0536742-CB0D-483B-AA2A-13E65221461A} = {77BDB3CD-DAD9-44D1-886E-270EB6249B60}
 	EndGlobalSection
 EndGlobal
